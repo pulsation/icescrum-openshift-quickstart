@@ -181,15 +181,11 @@ function download_and_install_icescrum() {
 
    pushd "$OPENSHIFT_DATA_DIR" > /dev/null
 
-   rm -f ${ICESCRUM_WAR_FILE}.zip icescrum.war
+   rm -f ${ICESCRUM_WAR_FILE}
 
    #  Get the icescrum war file.
    echo "  -  Downloading icescrum ... "
-   wget -nv "http://www.icescrum.org/downloads/${ICESCRUM_WAR_FILE}.zip"
-
-   #  Extract the icescrum.war file.
-   echo "  -  Extracting icescrum ... "
-   unzip -qq "${ICESCRUM_WAR_FILE}.zip"  &&  rm -f "${ICESCRUM_WAR_FILE}.zip"
+   wget -nv "http://www.icescrum.org/downloads/${ICESCRUM_WAR_FILE}"
 
    #  Remove old context directory and recreate it.
    echo "  -  Installing icescrum ... "
